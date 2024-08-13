@@ -27,7 +27,7 @@ import Navbar from './component/Navbar';
     <div>
       
       
-    <Navbar/>
+    <Navbar mode = {mode} toggleMode = {toggleMode}/>
 <TextForm heading = "Enter The text to analyze Below:" mode = {mode}/>
 <About/>
 
