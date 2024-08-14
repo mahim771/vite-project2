@@ -7,10 +7,24 @@ import Navbar from './component/Navbar';
 
  const App = () => {
 
-  const [mode,setMode] = useState("light");
+  const [mode,setMode] = useState("dark");
 
-  const toggleMode = () =>
+  
+ const removeBodyClass = () =>
+ {
+  document.body.classList.remove('bg-danger');
+  document.body.classList.remove('bg-warning');
+  document.body.classList.remove('bg-success');
+  document.body.classList.remove('bg-primary');
+ }
+ 
+
+  const toggleMode = (cls) =>
+    
   {
+    removeBodyClass();
+    document.body.classList.add("bg-"+cls)
+   
     if(mode === "light")
     {
       setMode("dark");
@@ -27,9 +41,9 @@ import Navbar from './component/Navbar';
     <div>
       
       
-    <Navbar mode = {mode} toggleMode = {toggleMode}/>
-<TextForm heading = "Enter The text to analyze Below:" mode = {mode}/>
-<About/>
+    <Navbar title = "Mahim" mode = {mode} toggleMode = {toggleMode}/>
+<TextForm  className = "mb-4 my-4" heading = " Try Textutils  - word counter character counter remove extra spaces :" mode = {mode}/>
+<About mode = {mode}/>
 
    
      
